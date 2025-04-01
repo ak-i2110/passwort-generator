@@ -1,0 +1,19 @@
+import random
+import string
+
+print("🔐 Passwort-Generator 🔐")
+
+# Eingabe: Länge des Passworts
+try:
+    length = int(input("Wie lang soll das Passwort sein? (z. B. 12): "))
+except ValueError:
+    print("❌ Bitte gib eine Zahl ein.")
+    exit()
+
+# Zeichen definieren
+chars = string.ascii_letters + string.digits + string.punctuation
+
+# Passwort generieren
+password = ''.join(random.choice(chars) for _ in range(length))
+
+print(f"\n✅ Dein sicheres Passwort: {password}")
